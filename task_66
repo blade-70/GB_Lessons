@@ -1,34 +1,34 @@
-//Задать значения M и N. 
-//Написать программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+//Задайте значения M и N. 
+//Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 //M = 1; N = 15 -> 120
 //M = 4; N = 8. -> 30
 
-int m = входные числа("Введите M: ");
-int n = входные числа("Введите N: ");
+int m = InputNumbers("Введите M: ");
+int n = InputNumbers("Введите N: ");
 int temp = m;
 
-если (m > n)
+if (m > n)
 {
- m = n;
- n = временная;
+    m = n;
+    n = temp;
 }
 
-Количество печатей (m, n, temp = 0);
+PrintSumm(m, n, temp = 0);
 
-аннулирует результат печати (int m, int n, int summ)
+void PrintSumm(int m, int n, int summ)
 {
- сумма = сумма + n;
- если (n <= m)
+    summ = summ + n;
+    if (n <= m)
     {
- Консоль.Write($"Сумма элементов = {summ} ");
- Возврат;
+        Console.Write($"Сумма элементов = {summ} ");
+        return;
     }
- Распечатайте (m, n - 1, summ);
+    PrintSumm(m, n - 1, summ);
 }
 
-int InputNumbers (ввод строки)
+int InputNumbers(string input)
 {
- Консоль.Запись (ввод);
- вывод int = преобразование.В INT32(консоль.Строка чтения());
- возвращает результат;
+    Console.Write(input);
+    int output = Convert.ToInt32(Console.ReadLine());
+    return output;
 }
